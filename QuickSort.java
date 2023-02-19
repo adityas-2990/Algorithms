@@ -40,7 +40,7 @@ public class QuickSort {
         quickSort(array , leftPointer + 1 , highIdx);
     }
 
-    private static void quickSort(int arr[]){
+    private static void quickSort(int[] arr){
         quickSort(arr , 0  , arr.length - 1);
     }
 
