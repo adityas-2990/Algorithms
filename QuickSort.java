@@ -6,12 +6,15 @@ public class QuickSort {
         arr[idx1] = arr[idx2];
         arr[idx2] = temp;
     }
+
+
     private static void quickSort(int[] array , int lowIdx , int highIdx){
 
         if(lowIdx >= highIdx){
             return;
         }
         int pivot = array[highIdx];
+
 
         int leftPointer = lowIdx;
         int rightPointer = highIdx;
@@ -27,6 +30,7 @@ public class QuickSort {
 
             swap(array , leftPointer , rightPointer);
         }
+
 
         swap(array , leftPointer , highIdx);
         quickSort(array , lowIdx , leftPointer -1);
