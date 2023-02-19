@@ -13,7 +13,10 @@ public class QuickSort {
         if(lowIdx >= highIdx){
             return;
         }
-        int pivot = array[highIdx];
+
+        int pivotIdx = new Random().nextInt(highIdx - lowIdx) + lowIdx;
+        int pivot = array[pivotIdx];
+        swap(array , pivotIdx , highIdx);
 
 
         int leftPointer = lowIdx;
@@ -37,6 +40,10 @@ public class QuickSort {
         quickSort(array , leftPointer + 1 , highIdx);
     }
 
+    private static void quickSort(int arr[]){
+        quickSort(arr , 0  , arr.length - 1);
+    }
+
     public static void main(String[] args) {
         Random rand = new Random();
         int[] arr = new int[100000];
@@ -46,7 +53,7 @@ public class QuickSort {
             arr[i] = rand.nextInt(1000000);
         }
 
-        quickSort(arr , 0 , arr.length -1);
+        quickSort(arr);
 
         for (int i = 0 ; i < n ; i++){
             System.out.println(arr[i] + " ");
