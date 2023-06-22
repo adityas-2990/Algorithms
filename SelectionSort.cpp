@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void selectionSort(int A[] , int n){
+void selectionSort(int A[] , int size){
     
-    for(int i = 0 ; i < n ; i++){
+    for(int i = 0 ; i < size ; i++){
         int minEle = INT32_MAX;
         int minIndx = i;
 
         //Finding Minimum element
-        for(int j = i ; j < n ; j++){
+        for(int j = i ; j < size ; j++){
             
             if(A[j] < minEle){
                 minEle = A[j];
@@ -22,7 +22,7 @@ void selectionSort(int A[] , int n){
         A[minIndx] = cpy;
     }
 
-    for(int i = 0 ; i < n ; i++){
+    for(int i = 0 ; i < size ; i++){
         cout << A[i] << " ";
     }
 }
